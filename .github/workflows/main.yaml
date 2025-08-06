@@ -23,8 +23,6 @@ jobs:
     env:
       api_token: ${{ inputs.api_token }}
       your_reddit_username: ${{ inputs.your_reddit_username }}
-    permissions: # Permissions needed for creating releases and tags in this job
-      contents: write
 
     steps:
       - name: Checkout code
@@ -43,8 +41,8 @@ jobs:
 
       - name: Build
         run: |
-          sudo python ./scripts/prepare.py
-          sudo bash ./scripts/build.sh
+          sudo api_token="$api_token" your_reddit_username="$your_reddit_username" python ./scripts/prepare.py
+          sudo api_token="$api_token" your_reddit_username="$your_reddit_username" bash ./scripts/build.sh
 
       - name: Validate artifact
         run: test -f /content/Infinity.apk
