@@ -44,7 +44,7 @@ jobs:
       - name: Build
         run: |
           sudo python ./scripts/prepare.py
-          sudo ./scripts/build.sh
+          sudo bash ./scripts/build.sh
 
       - name: Validate artifact
         run: test -f /content/Infinity.apk
