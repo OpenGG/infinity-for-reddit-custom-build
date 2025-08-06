@@ -9,8 +9,8 @@ import threading # 导入 threading 模块
 
 # --- 1. Setup the environment ---
 # IMPORTANT: Replace with your actual API token and Reddit username
-api_token = '' # Your Reddit API token
-your_reddit_username = '' # Your Reddit username
+api_token = os.environ.get('api_token') # Your Reddit API token
+your_reddit_username = os.environ.get('your_reddit_username') # Your Reddit username
 
 # --- Configuration (do not change unless you know what you're doing) ---
 user_agent = f"android:personal-app:0.0.1 (by /u/{your_reddit_username})"
